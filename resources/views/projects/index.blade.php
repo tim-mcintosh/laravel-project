@@ -1,3 +1,4 @@
+@extends('layout')
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,9 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<h1>Projects</h1>
-
+@section('content')
+    <h1 class="title">Projects</h1>
+<ul>
 @foreach ($projects as $project)
-    <li>{{$project->title}}</li>
+    <li>
+    <a href="/projects/{{$project->id}}">
+    {{$project->title}}
+    </a>
+    </li>
 @endforeach
+</ul>
 </html>
+@endsection
