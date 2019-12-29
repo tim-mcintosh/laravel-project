@@ -19,5 +19,20 @@
     </li>
 @endforeach
 </ul>
+    <br>
+    <form method="GET" action="/home">
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button">Home</button>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="/projects/create">
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button">Create Project</button>
+            </div>
+        </div>
+    </form>
 </html>
 @endsection

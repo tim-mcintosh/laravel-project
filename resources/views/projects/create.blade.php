@@ -18,26 +18,27 @@
 <form method="POST" action="/projects">
     {{csrf_field()}}
     <div>
+        <label class="header" for="title">Title</label>
         <input class="input {{ $errors->has('title') ? 'is-danger' : '' }}" type="text" name="title" placeholder="Project title" value="{{old('title')}}">
     </div>
     <div>
+        <label class="header" for="Description">Description</label>
         <textarea class="textarea {{ $errors->has('description') ? 'is-danger' : '' }}" name="description" cols="30" rows="10" placeholder="Project description">{{old('description')}}</textarea>
     </div>
     <div>
         <button type="submit" class="button is-link">Create Project</button>
     </div>
 
-    @if ($errors->any())
-        <div class="notification is-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-</form>
+    @include('errors')
 
+</form>
+<form method="GET" action="/projects">
+    <div class="field">
+        <div class="control">
+            <button type="submit" class="button">Back</button>
+        </div>
+    </div>
+</form>
 </html>
 
 @endsection
